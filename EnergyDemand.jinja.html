@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="sliders.css">
+    <title>EnergyDemand</title>
+</head>
+<body>
+<div class="columns">
+    <div class="column">
+        <div class="tile is-ancestor">
+            <div class="tile is parent is-vertical is-12">
+                <div class="tile is-child notification is-primary">
+                    <label class="label"> Choose zone</label>
+                    <div class="control is-expanded">
+                        <div class="select is-fullwidth">
+                            <select id="zone" onchange="refreshZone();">
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label">Energy Tariff</label>
+
+                        <div class="slidecontainer">
+                            <div class="level">
+                                <div class="level-item">
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider1">
+                                </div>
+                                <div class="level-item">
+                                    <input type="text" id="slider1Text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label">2-Wheeler</label>
+
+                        <div class="slidecontainer">
+                            <div class="level">
+                                <div class="level-item">
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider2">
+                                </div>
+                                <div class="level-item">
+                                    <input type="text" id="slider2Text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label">Compact</label>
+
+                        <div class="slidecontainer">
+                            <div class="level">
+                                <div class="level-item">
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider3">
+                                </div>
+                                <div class="level-item">
+                                    <input type="text" id="slider3Text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label">SUVs</label>
+
+                        <div class="slidecontainer">
+                            <div class="level">
+                                <div class="level-item">
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider4">
+                                </div>
+                                <div class="level-item">
+                                    <input type="text" id="slider4Text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label">Work from home</label>
+
+                        <div class="slidecontainer">
+                            <div class="level">
+                                <div class="level-item">
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider5">
+                                </div>
+                                <div class="level-item">
+                                    <input type="text" id="slider5Text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label">Energy Tariff</label>
+
+                        <div class="slidecontainer">
+                            <div class="level">
+                                <div class="level-item">
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider6">
+                                </div>
+                                <div class="level-item">
+                                    <input type="text" id="slider6Text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <article class="tile is-child notification">
+                    <div class="container">
+                        <div class="button is-large is-inverted is-fullwidth has-text-black"
+                             style="background-color: dodgerblue ">RUN THE SIMULATION
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(1) Settings
+                                            fed
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(2)
+                                            Population synthesis
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(3) Time use
+                                            synthesis
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(4) Energy
+                                            demand
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(5)
+                                            Reporting
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="field">
+                                <div class="box">
+                                    <div class="button is-fullwidth">SETUP LAYER</div>
+
+                                    <div class="level mb-0">
+                                        <div class="level-item">
+                                            <i class="fas fa-long-arrow-alt-down fa-3x"></i>
+                                        </div>
+                                        <div class="level-item">
+                                            <i class="fas fa-long-arrow-alt-down fa-3x"></i>
+                                        </div>
+                                        <div class="level-item">
+                                            <i class="fas fa-long-arrow-alt-down fa-3x"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="level">
+                                        <div class="level-item">
+                                            <div class="button">Population synthesis</div>
+                                        </div>
+                                        <div class="level-item">
+                                            <i class="fas fa-long-arrow-alt-right fa-3x"></i>
+                                        </div>
+
+                                        <div class="level-item">
+                                            <div class="button">Time use synthesis</div>
+                                        </div>
+                                        <div class="level-item">
+                                            <i class="fas fa-long-arrow-alt-right fa-3x"></i>
+                                        </div>
+                                        <div class="level-item">
+                                            <div class="button">Energy demand</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="column">
+        <div class="tile is-ancestor">
+            <div class="tile is parent is-vertical is-12">
+                <div class="tile is-child notification" id="mapCon">
+                    <div class = "container">
+
+
+                        <img src="map.png" height="100%" width="100%" style="z-index: 1;position: relative"/>
+                        <div class = "button is-large" id="mapA" style="border-radius: 50%; z-index: 2; position: absolute; left: 150px; top: 100px; background-color: rgb(248,203,173); border:hidden">
+                            Zone A
+                        </div>
+                        <div class = "button is-large" id="mapB" style="border-radius: 50%;  z-index: 2; position: absolute; left: 350px; top: 100px; background-color: rgb(143,170,220); border:hidden">
+                            Zone B
+                        </div>
+                        <div class = "button is-large" id="mapC" style="border-radius: 50%;  z-index: 2; position: absolute; left: 570px; top: 100px; background-color: rgb(197,224,180); border:hidden">
+                            Zone C
+                        </div>
+                            <div class = "button is-large" id="mapD" style="border-radius: 50%;  z-index: 2; position: absolute; left: 150px; top: 250px; background-color: rgb(0,176,240); border:hidden">
+                            Zone D
+                        </div>
+                        <div class = "button is-large" id="mapE" style="border-radius: 50%;  z-index: 2; position: absolute; left: 370px; top: 250px; background-color: rgb(255,242,204); border:hidden">
+                            Zone E
+                        </div>
+                            <div class = "button is-large" id="mapF" style="border-radius: 50%;  z-index: 2; position: absolute; left: 610px; top: 250px; background-color: rgb(217,217,217); border:hidden">
+                            Zone F
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="tile is-child notification" >
+                    <canvas id="chart">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    var dfs = {{ dfs |safe }};
+
+    var zone_desc = {
+        "A": [92, 15, 6, 3, 2, 21, 3743, 1251, 29, 24, 16, 18, 6, 7, 17, 83],
+        "B": [86, 12, 4, 11, 6, 10, 9521, 3233, 30, 26, 14, 18, 6, 5, 19, 81],
+        "C": [73, 5, 10, 17, 14, 70, 2009, 667, 28, 24, 11, 14, 11, 12, 15, 85],
+        "D": [77, 2, 1, 1, 0, 10, 6408, 2134, 24, 35, 13, 19, 6, 3, 18, 82],
+        "E": [89, 18, 6, 2, 5, 50, 2592, 898, 41, 23, 19, 12, 4, 1, 13, 81],
+        "F": [55, 15, 10, 16, 15, 40, 6720, 2215, 22, 37, 21, 9, 3, 8, 22, 78]
+    }
+    var lineChart = null;
+
+    var zones = Object.keys(dfs);
+    var selectBoxZone = document.getElementById('zone');
+
+    for (var i = 0, l = zones.length; i < l; i++) {
+        var option = zones[i];
+        selectBoxZone.options.add(new Option(option, option));
+    }
+
+
+    function refreshZone() {
+        refreshSliders();
+        refreshChart();
+    }
+
+    function refreshSliders() {
+        var zone = document.getElementById('zone').value;
+
+        var slidersVals = Object.values(zone_desc[zone]);
+        console.log(slidersVals);
+
+
+        for (var i = 0; i < 6; i++) {
+            var sliderId = "slider";
+            var slider = document.getElementById(sliderId + (i + 1));
+            console.log(sliderId + (i + 1));
+            slider.value = slidersVals[i];
+            var sliderText = document.getElementById(sliderId + (i + 1) + "Text");
+            sliderText.value = slidersVals[i] + "%";
+            slider.disabled = true;
+            sliderText.disabled = true;
+        }
+
+    }
+
+    function refreshChart() {
+        var zone = document.getElementById('zone').value;
+
+        var dates = Object.values(dfs[zone]["DT"]);
+        var vals = Object.values(dfs[zone]["EnDemProfile"]);
+
+        var chart = document.getElementById('chart').getContext('2d');
+
+        if (lineChart != null)
+            lineChart.destroy();
+
+        lineChart = new Chart(chart, {
+            type: 'line',
+
+            data: {
+                datasets: [{
+                    label: "Zone " + zone,
+                    data: vals,
+                    backgroundcolor: "Black"
+                }],
+                labels: dates
+            }
+            ,
+            options: {
+                title: {
+                    display: true,
+                    text: 'ENERGY DEMAND',
+                    fontSize: 24
+                },
+                legend: {
+                    position: 'right'
+                },
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: "KWatts",
+                            fontSize: 18
+                        },
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: true
+                        }
+                    }]
+                },
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                }
+            }
+        });
+    }
+
+    refreshZone();
+
+</script>
+
+</body>
+</html>
