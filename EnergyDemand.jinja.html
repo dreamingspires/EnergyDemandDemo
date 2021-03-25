@@ -15,7 +15,7 @@
     <div class="column">
         <div class="tile is-ancestor">
             <div class="tile is parent is-vertical is-12">
-                <div class="tile is-child notification is-primary">
+                <div class="tile is-child notification" style="min-height: 50vh">
                     <label class="label"> Choose zone</label>
                     <div class="control is-expanded">
                         <div class="select is-fullwidth">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div>
-                        <label class="label">Work from home</label>
+                        <label class="label">Compact vehicles</label>
 
                         <div class="slidecontainer">
                             <div class="level">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div>
-                        <label class="label">Energy Tariff</label>
+                        <label class="label">Work from home</label>
 
                         <div class="slidecontainer">
                             <div class="level">
@@ -108,8 +108,8 @@
                         </div>
                     </div>
                 </div>
-                <article class="tile is-child notification">
-                    <div class="container">
+                <article class="tile is-child notification" style="min-height: 50vh" >
+                    <div class="container mt-6">
                         <div class="button is-large is-inverted is-fullwidth has-text-black"
                              style="background-color: dodgerblue ">RUN THE SIMULATION
                         </div>
@@ -197,27 +197,33 @@
     <div class="column">
         <div class="tile is-ancestor">
             <div class="tile is parent is-vertical is-12">
-                <div class="tile is-child notification" id="mapCon">
-                    <div class = "container">
+                <div class="tile is-child notification" id="mapCon" style="min-height: 50vh">
+                    <div class="container">
 
 
                         <img src="map.png" height="100%" width="100%" style="z-index: 1;position: relative"/>
-                        <div class = "button is-large" id="mapA" style="border-radius: 50%; z-index: 2; position: absolute; left: 150px; top: 100px; background-color: rgb(248,203,173); border:hidden">
+                        <div class="button is-large" id="mapA"
+                             style="border-radius: 50%; z-index: 2; position: absolute; left: 150px; top: 100px; background-color: rgb(248,203,173); border:hidden">
                             Zone A
                         </div>
-                        <div class = "button is-large" id="mapB" style="border-radius: 50%;  z-index: 2; position: absolute; left: 350px; top: 100px; background-color: rgb(143,170,220); border:hidden">
+                        <div class="button is-large" id="mapB"
+                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 350px; top: 100px; background-color: rgb(143,170,220); border:hidden">
                             Zone B
                         </div>
-                        <div class = "button is-large" id="mapC" style="border-radius: 50%;  z-index: 2; position: absolute; left: 570px; top: 100px; background-color: rgb(197,224,180); border:hidden">
+                        <div class="button is-large" id="mapC"
+                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 570px; top: 100px; background-color: rgb(197,224,180); border:hidden">
                             Zone C
                         </div>
-                            <div class = "button is-large" id="mapD" style="border-radius: 50%;  z-index: 2; position: absolute; left: 150px; top: 250px; background-color: rgb(0,176,240); border:hidden">
+                        <div class="button is-large" id="mapD"
+                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 150px; top: 250px; background-color: rgb(0,176,240); border:hidden">
                             Zone D
                         </div>
-                        <div class = "button is-large" id="mapE" style="border-radius: 50%;  z-index: 2; position: absolute; left: 370px; top: 250px; background-color: rgb(255,242,204); border:hidden">
+                        <div class="button is-large" id="mapE"
+                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 370px; top: 250px; background-color: rgb(255,242,204); border:hidden">
                             Zone E
                         </div>
-                            <div class = "button is-large" id="mapF" style="border-radius: 50%;  z-index: 2; position: absolute; left: 610px; top: 250px; background-color: rgb(217,217,217); border:hidden">
+                        <div class="button is-large" id="mapF"
+                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 610px; top: 250px; background-color: rgb(217,217,217); border:hidden">
                             Zone F
                         </div>
 
@@ -227,7 +233,7 @@
 
                 </div>
 
-                <div class="tile is-child notification" >
+                <div class="tile is-child notification" style="min-height: 50vh">
                     <canvas id="chart">
                     </canvas>
                 </div>
@@ -236,6 +242,132 @@
 
     </div>
 
+</div>
+
+<div class="modal" id="Amodal">
+    <div class="modal-background" id="Abg" style="opacity: 0"></div>
+    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
+        <div class="box" style="width: auto;height: auto">
+            <div class="columns">
+                <div class="column">
+                    <p id="Apopulation"></p>
+                    <p id="AnumOfHouses"></p>
+                    <p id="AIncomeDist"></p>
+                    <p>Percentage of household living in:</p>
+                    <p id="Aflat"></p>
+                    <p id="Ahouse"></p>
+                </div>
+                <div class="column has-text-centered">
+                    <canvas id="chartA"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<<div class="modal" id="Bmodal">
+    <div class="modal-background" id="Bbg" style="opacity: 0"></div>
+    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
+        <div class="box" style="width: auto;height: auto">
+            <div class="columns">
+                <div class="column">
+                    <p id="Bpopulation"></p>
+                    <p id="BnumOfHouses"></p>
+                    <p id="BIncomeDist"></p>
+                    <p>Percentage of household living in:</p>
+                    <p id="Bflat"></p>
+                    <p id="Bhouse"></p>
+                </div>
+                <div class="column has-text-centered">
+                    <canvas id="chartB"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Cmodal">
+    <div class="modal-background" id="Cbg" style="opacity: 0"></div>
+    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
+        <div class="box" style="width: auto;height: auto">
+            <div class="columns">
+                <div class="column">
+                    <p id="Cpopulation"></p>
+                    <p id="CnumOfHouses"></p>
+                    <p id="CIncomeDist"></p>
+                    <p>Percentage of household living in:</p>
+                    <p id="Cflat"></p>
+                    <p id="Chouse"></p>
+                </div>
+                <div class="column has-text-centered">
+                    <canvas id="chartC"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Dmodal">
+    <div class="modal-background" id="Dbg" style="opacity: 0"></div>
+    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
+        <div class="box" style="width: auto;height: auto">
+            <div class="columns">
+                <div class="column">
+                    <p id="Dpopulation"></p>
+                    <p id="DnumOfHouses"></p>
+                    <p id="DIncomeDist"></p>
+                    <p>Percentage of household living in:</p>
+                    <p id="Dflat"></p>
+                    <p id="Dhouse"></p>
+                </div>
+                <div class="column has-text-centered">
+                    <canvas id="chartD"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Emodal">
+    <div class="modal-background" id="Ebg" style="opacity: 0"></div>
+    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
+        <div class="box" style="width: auto;height: auto">
+            <div class="columns">
+                <div class="column">
+                    <p id="Epopulation"></p>
+                    <p id="EnumOfHouses"></p>
+                    <p id="EIncomeDist"></p>
+                    <p>Percentage of household living in:</p>
+                    <p id="Eflat"></p>
+                    <p id="Ehouse"></p>
+                </div>
+                <div class="column has-text-centered">
+                    <canvas id="chartE"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Fmodal">
+    <div class="modal-background" id="Fbg" style="opacity: 0"></div>
+    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
+        <div class="box" style="width: auto;height: auto">
+            <div class="columns">
+                <div class="column">
+                    <p id="Fpopulation"></p>
+                    <p id="FnumOfHouses"></p>
+                    <p id="FIncomeDist"></p>
+                    <p>Percentage of household living in:</p>
+                    <p id="Fflat"></p>
+                    <p id="Fhouse"></p>
+                </div>
+                <div class="column has-text-centered">
+                    <canvas id="chartF"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -340,6 +472,161 @@
             }
         });
     }
+
+    //modals
+    // Population
+    // Number of households
+    // Income distribution
+    // Below £15k p.a.
+    //     £15-25k p.a.
+    //     £25k-35k p.a.
+    //     £35-50k p.a.
+    //     £50-70k p.a.
+    //     Above £70k p.a.
+    //     Residential market
+    // %age of households living in
+    // Flat
+    // House (detached or semi-detached)
+
+    var mapA = document.getElementById('mapA')
+    var Amodal = document.getElementById('Amodal');
+    var Abg = document.getElementById('Abg');
+
+    var mapB = document.getElementById('mapB')
+    var Bmodal = document.getElementById('Bmodal');
+    var Bbg = document.getElementById('Bbg');
+
+    var mapC = document.getElementById('mapC')
+    var Cmodal = document.getElementById('Cmodal');
+    var Cbg = document.getElementById('Cbg');
+
+    var mapD = document.getElementById('mapD')
+    var Dmodal = document.getElementById('Dmodal');
+    var Dbg = document.getElementById('Dbg');
+
+    var mapE = document.getElementById('mapE')
+    var Emodal = document.getElementById('Emodal');
+    var Ebg = document.getElementById('Ebg');
+
+    var mapF = document.getElementById('mapF')
+    var Fmodal = document.getElementById('Fmodal');
+    var Fbg = document.getElementById('Fbg');
+
+    var chart = null;
+
+
+    function fillModal(z) {
+        var zone = z;
+
+        var pop = document.getElementById(zone + 'population');
+        var num = document.getElementById(zone + 'numOfHouses');
+        var inc = document.getElementById(zone + 'IncomeDist');
+        var flats = document.getElementById(zone + 'flat');
+        var houses = document.getElementById(zone + 'house');
+
+
+        pop.innerText = "Income distribution:\n"+"Population: " + zone_desc[zone][6];
+        num.innerText = "Number of households: " + zone_desc[zone][7];
+        inc.innerText = "Below £15k p.a.: " + zone_desc[zone][8] + "%\n" +
+            "£15-25k p.a.: " + zone_desc[zone][9] + "%\n" +
+            "£25k-35k p.a.: " + zone_desc[zone][10] + "%\n" +
+            "£35-50k p.a.: " + zone_desc[zone][11] + "%\n" +
+            "£50-70k p.a.: " + zone_desc[zone][12] + "%\n" +
+            "Above £70k p.a.: " + zone_desc[zone][13] + "%\n"
+        var lineChart = document.getElementById('chart' + zone).getContext('2d');
+
+        if (chart != null)
+            chart.destroy();
+        chart = new Chart(lineChart, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: "Zone " + zone + " Income distribution",
+                    data: [zone_desc[zone][8], zone_desc[zone][9], zone_desc[zone][10], zone_desc[zone][11], zone_desc[zone][12], zone_desc[zone][13]],
+                    backgroundcolor: "Black"
+                }],
+                labels: ["Below £15k p.a.", "£15-25k p.a.", "£25k-35k p.a.", "£35-50k p.a.", "£50-70k p.a.", "Above £70k p.a."]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: "% of people",
+                            fontSize: 12
+                        }
+                    }]
+                }
+            }
+
+
+        })
+        flats.innerText = "flats: " + zone_desc[zone][14] + '%'
+        houses.innerText = "houses: " + zone_desc[zone][15] + '%'
+
+
+    }
+
+    mapA.addEventListener('click', () => {
+        var z = mapA.id.charAt(3);
+        fillModal(z);
+        console.log('clicked');
+        Amodal.classList.add('is-active')
+    })
+    Abg.addEventListener('click', () => {
+        Amodal.classList.remove('is-active')
+    })
+
+    mapB.addEventListener('click', () => {
+        var z = mapB.id.charAt(3);
+        fillModal(z);
+        console.log('clicked');
+        Bmodal.classList.add('is-active')
+    })
+    Bbg.addEventListener('click', () => {
+        Bmodal.classList.remove('is-active')
+    })
+
+    mapC.addEventListener('click', () => {
+        var z = mapC.id.charAt(3);
+        fillModal(z);
+        console.log('clicked');
+        Cmodal.classList.add('is-active')
+    })
+    Cbg.addEventListener('click', () => {
+        Cmodal.classList.remove('is-active')
+    })
+
+    mapD.addEventListener('click', () => {
+        var z = mapD.id.charAt(3);
+        fillModal(z);
+        console.log('clicked');
+        Dmodal.classList.add('is-active')
+    })
+    Dbg.addEventListener('click', () => {
+        Dmodal.classList.remove('is-active')
+    })
+
+    mapE.addEventListener('click', () => {
+        var z = mapE.id.charAt(3);
+        fillModal(z);
+        console.log('clicked');
+        Emodal.classList.add('is-active')
+    })
+    Ebg.addEventListener('click', () => {
+        Emodal.classList.remove('is-active')
+    })
+
+    mapF.addEventListener('click', () => {
+        var z = mapF.id.charAt(3);
+        fillModal(z);
+        console.log('clicked');
+        Fmodal.classList.add('is-active')
+    })
+    Fbg.addEventListener('click', () => {
+        Fmodal.classList.remove('is-active')
+    })
+
 
     refreshZone();
 

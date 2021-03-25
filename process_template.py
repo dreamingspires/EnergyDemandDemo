@@ -20,15 +20,12 @@ def load_dfs(dir: Path):
 input_template = Path("EnergyDemand.jinja.html")
 output_file = Path("EnergyDemand.html")
 
-
 env = Environment(
     loader=FileSystemLoader(input_template.parent),
     autoescape=select_autoescape(['html', 'xml'])
 )
 template = env.get_template(input_template.name)
 
-stream = template.stream(dfs = load_dfs(Path("zoneData")))
-with output_file.open('w') as file:
+stream = template.stream(dfs=load_dfs(Path("zoneData")))
+with output_file.open('w', encoding='utf-8') as file:
     stream.dump(file)
-
-
