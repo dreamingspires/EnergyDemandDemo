@@ -10,367 +10,350 @@
     <link rel="stylesheet" type="text/css" href="sliders.css">
     <title>EnergyDemand</title>
 </head>
-<body>
-<div class="columns">
-    <div class="column">
-        <div class="tile is-ancestor">
-            <div class="tile is parent is-vertical is-12">
-                <div class="tile is-child notification" style="min-height: 50vh">
-                    <label class="label"> Choose zone</label>
-                    <div class="control is-expanded">
-                        <div class="select is-fullwidth">
-                            <select id="zone" onchange="refreshZone();">
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="label">Energy Tariff</label>
-
-                        <div class="slidecontainer">
-                            <div class="level">
-                                <div class="level-item">
-                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider1">
-                                </div>
-                                <div class="level-item">
-                                    <input type="text" id="slider1Text" value="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="label">2-Wheeler</label>
-
-                        <div class="slidecontainer">
-                            <div class="level">
-                                <div class="level-item">
-                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider2">
-                                </div>
-                                <div class="level-item">
-                                    <input type="text" id="slider2Text" value="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="label">Compact</label>
-
-                        <div class="slidecontainer">
-                            <div class="level">
-                                <div class="level-item">
-                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider3">
-                                </div>
-                                <div class="level-item">
-                                    <input type="text" id="slider3Text" value="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="label">SUVs</label>
-
-                        <div class="slidecontainer">
-                            <div class="level">
-                                <div class="level-item">
-                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider4">
-                                </div>
-                                <div class="level-item">
-                                    <input type="text" id="slider4Text" value="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="label">Compact vehicles</label>
-
-                        <div class="slidecontainer">
-                            <div class="level">
-                                <div class="level-item">
-                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider5">
-                                </div>
-                                <div class="level-item">
-                                    <input type="text" id="slider5Text" value="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="label">Work from home</label>
-
-                        <div class="slidecontainer">
-                            <div class="level">
-                                <div class="level-item">
-                                    <input type="range" min="1" max="100" value="50" class="slider" id="slider6">
-                                </div>
-                                <div class="level-item">
-                                    <input type="text" id="slider6Text" value="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<body style="background-color: #f0f0f5">
+<!--<div class="columns">-->
+<!--    <div class="column">-->
+<div class="tile is-ancestor">
+    <div class="tile is parent is-vertical is-6 notification" style="background-color: #f0f0f5">
+        <div class="tile is-child">
+            <label class="label"> Choose zone</label>
+            <div class="control is-expanded">
+                <div class="select is-fullwidth">
+                    <select id="zone" onchange="refreshZone();">
+                    </select>
                 </div>
-                <article class="tile is-child notification" style="min-height: 50vh" >
-                    <div class="container mt-6">
-                        <div class="button is-large is-inverted is-fullwidth has-text-black"
-                             style="background-color: dodgerblue ">RUN THE SIMULATION
-                        </div>
-                    </div>
+            </div>
+            <div>
+                <label class="label">Energy Tariff</label>
+
+                <div class="slidecontainer">
                     <div class="level">
-                        <div class="level-left">
-                            <div class="level-item">
-                                <div class="field">
-                                    <div class="control">
-                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(1) Settings
-                                            fed
-                                        </div>
-                                    </div>
-                                    <div class="control">
-                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(2)
-                                            Population synthesis
-                                        </div>
-                                    </div>
-                                    <div class="control">
-                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(3) Time use
-                                            synthesis
-                                        </div>
-                                    </div>
-                                    <div class="control">
-                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(4) Energy
-                                            demand
-                                        </div>
-                                    </div>
-                                    <div class="control">
-                                        <div class="button is-fullwidth" style="background-color: #4CAF50">(5)
-                                            Reporting
-                                        </div>
-                                    </div>
+                        <div class="level-item">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider1">
+                        </div>
+                        <div class="level-item">
+                            <input type="text" id="slider1Text" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="label">2-Wheeler</label>
+
+                <div class="slidecontainer">
+                    <div class="level">
+                        <div class="level-item">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider2">
+                        </div>
+                        <div class="level-item">
+                            <input type="text" id="slider2Text" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="label">Compact</label>
+
+                <div class="slidecontainer">
+                    <div class="level">
+                        <div class="level-item">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider3">
+                        </div>
+                        <div class="level-item">
+                            <input type="text" id="slider3Text" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="label">SUVs</label>
+
+                <div class="slidecontainer">
+                    <div class="level">
+                        <div class="level-item">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider4">
+                        </div>
+                        <div class="level-item">
+                            <input type="text" id="slider4Text" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="label">Compact vehicles</label>
+
+                <div class="slidecontainer">
+                    <div class="level">
+                        <div class="level-item">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider5">
+                        </div>
+                        <div class="level-item">
+                            <input type="text" id="slider5Text" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="label">Work from home</label>
+
+                <div class="slidecontainer">
+                    <div class="level">
+                        <div class="level-item">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider6">
+                        </div>
+                        <div class="level-item">
+                            <input type="text" id="slider6Text" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class="tile is-child">
+            <div class="container mt-6">
+                <div class="button is-large is-inverted is-fullwidth has-text-black" onclick="startSim();"
+                     style="background-color: dodgerblue ">RUN THE SIMULATION
+                </div>
+            </div>
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <div class="field">
+                            <div class="control">
+                                <div class="button is-fullwidth" id="setFed" style="background-color: #B22222">(1)
+                                    Settings
+                                    fed
+                                </div>
+                            </div>
+                            <div class="control">
+                                <div class="button is-fullwidth" id="pop" style="background-color: #B22222">(2)
+                                    Population synthesis
+                                </div>
+                            </div>
+                            <div class="control">
+                                <div class="button is-fullwidth" id="time" style="background-color: #B22222">(3) Time
+                                    use
+                                    synthesis
+                                </div>
+                            </div>
+                            <div class="control">
+                                <div class="button is-fullwidth" id="energy" style="background-color: #B22222">(4)
+                                    Energy
+                                    demand
+                                </div>
+                            </div>
+                            <div class="control">
+                                <div class="button is-fullwidth" id="report" style="background-color: #b22222">(5)
+                                    Reporting
                                 </div>
                             </div>
                         </div>
-                        <div class="container">
-                            <div class="field">
-                                <div class="box">
-                                    <div class="button is-fullwidth">SETUP LAYER</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="field">
+                        <div class="box">
+                            <div class="button is-fullwidth" id ="setLay" style="background-color: #B22222">SETUP LAYER</div>
 
-                                    <div class="level mb-0">
-                                        <div class="level-item">
-                                            <i class="fas fa-long-arrow-alt-down fa-3x"></i>
-                                        </div>
-                                        <div class="level-item">
-                                            <i class="fas fa-long-arrow-alt-down fa-3x"></i>
-                                        </div>
-                                        <div class="level-item">
-                                            <i class="fas fa-long-arrow-alt-down fa-3x"></i>
-                                        </div>
-                                    </div>
+                            <div class="level mb-0">
+                                <div class="level-item">
+                                    <i class="fas fa-long-arrow-alt-down fa-3x" id = "ar1" style="color: #B22222"></i>
+                                </div>
+                                <div class="level-item">
+                                    <i class="fas fa-long-arrow-alt-down fa-3x" id = "ar2" style="color: #B22222"></i>
+                                </div>
+                                <div class="level-item">
+                                    <i class="fas fa-long-arrow-alt-down fa-3x" id = "ar3" style="color: #B22222"></i>
+                                </div>
+                            </div>
 
-                                    <div class="level">
-                                        <div class="level-item">
-                                            <div class="button">Population synthesis</div>
-                                        </div>
-                                        <div class="level-item">
-                                            <i class="fas fa-long-arrow-alt-right fa-3x"></i>
-                                        </div>
-
-                                        <div class="level-item">
-                                            <div class="button">Time use synthesis</div>
-                                        </div>
-                                        <div class="level-item">
-                                            <i class="fas fa-long-arrow-alt-right fa-3x"></i>
-                                        </div>
-                                        <div class="level-item">
-                                            <div class="button">Energy demand</div>
-                                        </div>
-                                    </div>
+                            <div class="level">
+                                <div class="level-item">
+                                    <div class="button" id = "pop2" style="background-color: #B22222">Population synthesis</div>
+                                </div>
+                                <div class="level-item">
+                                    <i class="fas fa-long-arrow-alt-right fa-3x" id = "ar4" style="color: #B22222"></i>
                                 </div>
 
+                                <div class="level-item">
+                                    <div class="button" id = "time2" style="background-color: #B22222">Time use synthesis</div>
+                                </div>
+                                <div class="level-item">
+                                    <i class="fas fa-long-arrow-alt-right fa-3x" id = "ar5" style="color: #B22222"></i>
+                                </div>
+                                <div class="level-item">
+                                    <div class="button" id = "energy2" style="background-color: #B22222">Energy demand</div>
+                                </div>
+                            </div>
+                        </div>
 
+
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </div>
+    <!--        </div>-->
+    <!--    </div>-->
+
+
+    <!--    <div class="column">-->
+    <!--        <div class="tile is-ancestor">-->
+    <div class="tile is parent is-vertical is-6 notification" style="background-color: #f0f0f5">
+        <div class="tile is-child" id="mapCon">
+            <div class="container" style="position: relative;height: 100%; width: 100%">
+
+                <div class="box" id="box" style="z-index: 3; position: absolute; visibility: hidden;">
+                    <div class="box" style="width: auto;height: auto">
+                        <div class="columns">
+                            <div class="column">
+                                <p id="population"></p>
+                                <p id="numOfHouses"></p>
+                                <p id="IncomeDist"></p>
+                                <p>Percentage of household living in:</p>
+                                <p id="flat"></p>
+                                <p id="house"></p>
+                            </div>
+                            <div class="column has-text-centered">
+                                <canvas id="chartDet"></canvas>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                </article>
+                <div class = "container" style="position: relative;  text-align: center;">
+                <img src="map3.svg" style="z-index: 1;max-width:100%; max-height:100%;object-fit: fill"/>
+                <div class="button is-large" id="mapA"
+                     style="border-radius: 50%; z-index: 2; position: absolute; left: 22%; top: 33%; background-color: rgba(248,203,173,0.0); border:hidden">
+                    Zone A
+                </div>
+                <div class="button is-large" id="mapB"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 44%; top: 11%; background-color: rgba(143,170,220,0.0); border:hidden">
+                    Zone B
+                </div>
+                <div class="button is-large" id="mapC"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 55%; top: 22%; background-color: rgba(197,224,180,0.0); border:hidden">
+                    Zone C
+                </div>
+                <div class="button is-large" id="mapD"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 22%; top: 55%; background-color: rgba(0,176,240,0.0); border:hidden">
+                    Zone D
+                </div>
+                <div class="button is-large" id="mapE"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 52%; top: 55%; background-color: rgba(255,242,204,0.0); border:hidden">
+                    Zone E
+                </div>
+                <div class="button is-large" id="mapF"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 65%; top: 44%; background-color: rgba(217,217,217,0.0); border:hidden">
+                    Zone F
+                </div>
+
+                </div>
+
+
             </div>
         </div>
-    </div>
-
-
-    <div class="column">
-        <div class="tile is-ancestor">
-            <div class="tile is parent is-vertical is-12">
-                <div class="tile is-child notification" id="mapCon" style="min-height: 50vh">
-                    <div class="container">
-
-
-                        <img src="map.png" height="100%" width="100%" style="z-index: 1;position: relative"/>
-                        <div class="button is-large" id="mapA"
-                             style="border-radius: 50%; z-index: 2; position: absolute; left: 150px; top: 100px; background-color: rgb(248,203,173); border:hidden">
-                            Zone A
-                        </div>
-                        <div class="button is-large" id="mapB"
-                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 350px; top: 100px; background-color: rgb(143,170,220); border:hidden">
-                            Zone B
-                        </div>
-                        <div class="button is-large" id="mapC"
-                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 570px; top: 100px; background-color: rgb(197,224,180); border:hidden">
-                            Zone C
-                        </div>
-                        <div class="button is-large" id="mapD"
-                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 150px; top: 250px; background-color: rgb(0,176,240); border:hidden">
-                            Zone D
-                        </div>
-                        <div class="button is-large" id="mapE"
-                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 370px; top: 250px; background-color: rgb(255,242,204); border:hidden">
-                            Zone E
-                        </div>
-                        <div class="button is-large" id="mapF"
-                             style="border-radius: 50%;  z-index: 2; position: absolute; left: 610px; top: 250px; background-color: rgb(217,217,217); border:hidden">
-                            Zone F
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-                <div class="tile is-child notification" style="min-height: 50vh">
-                    <canvas id="chart">
-                    </canvas>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="modal" id="Amodal">
-    <div class="modal-background" id="Abg" style="opacity: 0"></div>
-    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
-        <div class="box" style="width: auto;height: auto">
-            <div class="columns">
-                <div class="column">
-                    <p id="Apopulation"></p>
-                    <p id="AnumOfHouses"></p>
-                    <p id="AIncomeDist"></p>
-                    <p>Percentage of household living in:</p>
-                    <p id="Aflat"></p>
-                    <p id="Ahouse"></p>
-                </div>
-                <div class="column has-text-centered">
-                    <canvas id="chartA"></canvas>
-                </div>
-            </div>
+        <div class="tile is-child">
+            <canvas id="chart">
+            </canvas>
         </div>
     </div>
 </div>
 
-<<div class="modal" id="Bmodal">
-    <div class="modal-background" id="Bbg" style="opacity: 0"></div>
-    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
-        <div class="box" style="width: auto;height: auto">
-            <div class="columns">
-                <div class="column">
-                    <p id="Bpopulation"></p>
-                    <p id="BnumOfHouses"></p>
-                    <p id="BIncomeDist"></p>
-                    <p>Percentage of household living in:</p>
-                    <p id="Bflat"></p>
-                    <p id="Bhouse"></p>
-                </div>
-                <div class="column has-text-centered">
-                    <canvas id="chartB"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--    </div>-->
 
-<div class="modal" id="Cmodal">
-    <div class="modal-background" id="Cbg" style="opacity: 0"></div>
-    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
-        <div class="box" style="width: auto;height: auto">
-            <div class="columns">
-                <div class="column">
-                    <p id="Cpopulation"></p>
-                    <p id="CnumOfHouses"></p>
-                    <p id="CIncomeDist"></p>
-                    <p>Percentage of household living in:</p>
-                    <p id="Cflat"></p>
-                    <p id="Chouse"></p>
-                </div>
-                <div class="column has-text-centered">
-                    <canvas id="chartC"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--</div>-->
 
-<div class="modal" id="Dmodal">
-    <div class="modal-background" id="Dbg" style="opacity: 0"></div>
-    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
-        <div class="box" style="width: auto;height: auto">
-            <div class="columns">
-                <div class="column">
-                    <p id="Dpopulation"></p>
-                    <p id="DnumOfHouses"></p>
-                    <p id="DIncomeDist"></p>
-                    <p>Percentage of household living in:</p>
-                    <p id="Dflat"></p>
-                    <p id="Dhouse"></p>
-                </div>
-                <div class="column has-text-centered">
-                    <canvas id="chartD"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="modal" id="modal">
+    <div class="modal-background" id="bg" style="opacity: 0"></div>
 </div>
-
-<div class="modal" id="Emodal">
-    <div class="modal-background" id="Ebg" style="opacity: 0"></div>
-    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
-        <div class="box" style="width: auto;height: auto">
-            <div class="columns">
-                <div class="column">
-                    <p id="Epopulation"></p>
-                    <p id="EnumOfHouses"></p>
-                    <p id="EIncomeDist"></p>
-                    <p>Percentage of household living in:</p>
-                    <p id="Eflat"></p>
-                    <p id="Ehouse"></p>
-                </div>
-                <div class="column has-text-centered">
-                    <canvas id="chartE"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal" id="Fmodal">
-    <div class="modal-background" id="Fbg" style="opacity: 0"></div>
-    <div class="modal-content has-background-white" style="top: -300px;left: 400px;">
-        <div class="box" style="width: auto;height: auto">
-            <div class="columns">
-                <div class="column">
-                    <p id="Fpopulation"></p>
-                    <p id="FnumOfHouses"></p>
-                    <p id="FIncomeDist"></p>
-                    <p>Percentage of household living in:</p>
-                    <p id="Fflat"></p>
-                    <p id="Fhouse"></p>
-                </div>
-                <div class="column has-text-centered">
-                    <canvas id="chartF"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script>
+    function sleep(ms) {
+        console.log("sleep");
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function restartSim() {
+        var setFed = document.getElementById("setFed");
+        var pop = document.getElementById("pop");
+        var time = document.getElementById("time");
+        var energy = document.getElementById("energy");
+        var report = document.getElementById("report");
+
+        var ar1 = document.getElementById("ar1");
+        var ar2 = document.getElementById("ar2");
+        var ar3 = document.getElementById("ar3");
+        var ar4 = document.getElementById("ar4");
+        var ar5 = document.getElementById("ar5");
+        var setLay = document.getElementById("setLay");
+        var pop2 = document.getElementById("pop2");
+        var time2 = document.getElementById("time2");
+        var energy2 = document.getElementById("energy2");
+
+
+
+        setFed.style.backgroundColor = "#B22222";
+        setLay.style.backgroundColor = "#B22222";
+
+        ar1.style.color = "#B22222";
+        ar2.style.color = "#B22222";
+        ar3.style.color = "#B22222";
+        ar4.style.color = "#B22222";
+        ar5.style.color = "#B22222";
+
+        pop.style.backgroundColor = "#B22222";
+        pop2.style.backgroundColor = "#B22222";
+
+        time.style.backgroundColor = "#B22222";
+        time2.style.backgroundColor = "#B22222";
+
+
+        energy.style.backgroundColor = "#B22222";
+        energy2.style.backgroundColor = "#B22222";
+
+        report.style.backgroundColor = "#B22222";
+
+
+    }
+
+    async function startSim() {
+        var setFed = document.getElementById("setFed");
+        var pop = document.getElementById("pop");
+        var time = document.getElementById("time");
+        var energy = document.getElementById("energy");
+        var report = document.getElementById("report");
+
+        var ar1 = document.getElementById("ar1");
+        var ar2 = document.getElementById("ar2");
+        var ar3 = document.getElementById("ar3");
+        var ar4 = document.getElementById("ar4");
+        var ar5 = document.getElementById("ar5");
+        var setLay = document.getElementById("setLay");
+        var pop2 = document.getElementById("pop2");
+        var time2 = document.getElementById("time2");
+        var energy2 = document.getElementById("energy2");
+
+        setFed.style.backgroundColor = "#4CAF50";
+        setLay.style.backgroundColor = "#4CAF50";
+        ar1.style.color = "#4CAF50";
+        ar2.style.color = "#4CAF50";
+        ar3.style.color = "#4CAF50";
+        await sleep(1000);
+        pop.style.backgroundColor = "#4CAF50";
+        pop2.style.backgroundColor = "#4CAF50";
+        ar4.style.color = "#4CAF50";
+        await sleep(1000);
+        time.style.backgroundColor = "#4CAF50";
+        time2.style.backgroundColor = "#4CAF50";
+        ar5.style.color = "#4CAF50";
+        await sleep(1000);
+        energy.style.backgroundColor = "#4CAF50";
+        energy2.style.backgroundColor = "#4CAF50";
+        await sleep(1000);
+        report.style.backgroundColor = "#4CAF50";
+        await sleep(1000);
+        refreshChart();
+    }
 
     var dfs = {{ dfs |safe }};
 
@@ -394,8 +377,10 @@
 
 
     function refreshZone() {
+        lineChart.destroy();
         refreshSliders();
-        refreshChart();
+        restartSim();
+
     }
 
     function refreshSliders() {
@@ -419,6 +404,7 @@
     }
 
     function refreshChart() {
+        console.log("chart");
         var zone = document.getElementById('zone').value;
 
         var dates = Object.values(dfs[zone]["DT"]);
@@ -474,58 +460,32 @@
     }
 
     //modals
-    // Population
-    // Number of households
-    // Income distribution
-    // Below £15k p.a.
-    //     £15-25k p.a.
-    //     £25k-35k p.a.
-    //     £35-50k p.a.
-    //     £50-70k p.a.
-    //     Above £70k p.a.
-    //     Residential market
-    // %age of households living in
-    // Flat
-    // House (detached or semi-detached)
 
-    var mapA = document.getElementById('mapA')
-    var Amodal = document.getElementById('Amodal');
-    var Abg = document.getElementById('Abg');
+    var box = document.getElementById('box');
+    var modal = document.getElementById('modal');
+    var bg = document.getElementById('bg');
 
-    var mapB = document.getElementById('mapB')
-    var Bmodal = document.getElementById('Bmodal');
-    var Bbg = document.getElementById('Bbg');
+    var mapA = document.getElementById('mapA');
+    var mapB = document.getElementById('mapB');
+    var mapC = document.getElementById('mapC');
+    var mapD = document.getElementById('mapD');
+    var mapE = document.getElementById('mapE');
+    var mapF = document.getElementById('mapF');
 
-    var mapC = document.getElementById('mapC')
-    var Cmodal = document.getElementById('Cmodal');
-    var Cbg = document.getElementById('Cbg');
-
-    var mapD = document.getElementById('mapD')
-    var Dmodal = document.getElementById('Dmodal');
-    var Dbg = document.getElementById('Dbg');
-
-    var mapE = document.getElementById('mapE')
-    var Emodal = document.getElementById('Emodal');
-    var Ebg = document.getElementById('Ebg');
-
-    var mapF = document.getElementById('mapF')
-    var Fmodal = document.getElementById('Fmodal');
-    var Fbg = document.getElementById('Fbg');
 
     var chart = null;
-
 
     function fillModal(z) {
         var zone = z;
 
-        var pop = document.getElementById(zone + 'population');
-        var num = document.getElementById(zone + 'numOfHouses');
-        var inc = document.getElementById(zone + 'IncomeDist');
-        var flats = document.getElementById(zone + 'flat');
-        var houses = document.getElementById(zone + 'house');
+        var pop = document.getElementById('population');
+        var num = document.getElementById('numOfHouses');
+        var inc = document.getElementById('IncomeDist');
+        var flats = document.getElementById('flat');
+        var houses = document.getElementById('house');
 
 
-        pop.innerText = "Income distribution:\n"+"Population: " + zone_desc[zone][6];
+        pop.innerText = "Income distribution:\n" + "Population: " + zone_desc[zone][6];
         num.innerText = "Number of households: " + zone_desc[zone][7];
         inc.innerText = "Below £15k p.a.: " + zone_desc[zone][8] + "%\n" +
             "£15-25k p.a.: " + zone_desc[zone][9] + "%\n" +
@@ -533,7 +493,7 @@
             "£35-50k p.a.: " + zone_desc[zone][11] + "%\n" +
             "£50-70k p.a.: " + zone_desc[zone][12] + "%\n" +
             "Above £70k p.a.: " + zone_desc[zone][13] + "%\n"
-        var lineChart = document.getElementById('chart' + zone).getContext('2d');
+        var lineChart = document.getElementById('chartDet').getContext('2d');
 
         if (chart != null)
             chart.destroy();
@@ -571,63 +531,48 @@
         var z = mapA.id.charAt(3);
         fillModal(z);
         console.log('clicked');
-        Amodal.classList.add('is-active')
+        box.style.visibility = "visible";
+        modal.classList.add('is-active');
     })
-    Abg.addEventListener('click', () => {
-        Amodal.classList.remove('is-active')
-    })
-
     mapB.addEventListener('click', () => {
         var z = mapB.id.charAt(3);
         fillModal(z);
         console.log('clicked');
-        Bmodal.classList.add('is-active')
+        box.style.visibility = "visible";
+        modal.classList.add('is-active');
     })
-    Bbg.addEventListener('click', () => {
-        Bmodal.classList.remove('is-active')
-    })
-
     mapC.addEventListener('click', () => {
         var z = mapC.id.charAt(3);
         fillModal(z);
         console.log('clicked');
-        Cmodal.classList.add('is-active')
+        box.style.visibility = "visible";
+        modal.classList.add('is-active');
     })
-    Cbg.addEventListener('click', () => {
-        Cmodal.classList.remove('is-active')
-    })
-
     mapD.addEventListener('click', () => {
         var z = mapD.id.charAt(3);
         fillModal(z);
         console.log('clicked');
-        Dmodal.classList.add('is-active')
+        box.style.visibility = "visible";
+        modal.classList.add('is-active');
     })
-    Dbg.addEventListener('click', () => {
-        Dmodal.classList.remove('is-active')
-    })
-
     mapE.addEventListener('click', () => {
         var z = mapE.id.charAt(3);
         fillModal(z);
         console.log('clicked');
-        Emodal.classList.add('is-active')
+        box.style.visibility = "visible";
+        modal.classList.add('is-active');
     })
-    Ebg.addEventListener('click', () => {
-        Emodal.classList.remove('is-active')
-    })
-
     mapF.addEventListener('click', () => {
         var z = mapF.id.charAt(3);
         fillModal(z);
         console.log('clicked');
-        Fmodal.classList.add('is-active')
+        box.style.visibility = "visible";
+        modal.classList.add('is-active');
     })
-    Fbg.addEventListener('click', () => {
-        Fmodal.classList.remove('is-active')
-    })
-
-
+    bg.addEventListener("click", () => {
+        box.style.visibility = "hidden";
+        modal.classList.remove('is-active')
+    });
     refreshZone();
 
 </script>
