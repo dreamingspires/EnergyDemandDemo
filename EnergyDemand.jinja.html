@@ -377,7 +377,8 @@
 
 
     function refreshZone() {
-        lineChart.destroy();
+        if(lineChart!=null)
+            lineChart.destroy();
         refreshSliders();
         restartSim();
 
