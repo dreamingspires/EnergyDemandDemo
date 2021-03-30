@@ -24,27 +24,33 @@
                 </div>
             </div>
             <div>
-                <label class="label">Energy Tariff</label>
+                <label class="label" style = "width: 50%;">Energy Tariff</label>
 
                 <div class="slidecontainer">
                     <div class="level">
+                        <div class = "level-item"><div class = "label">Standard</div></div>
                         <div class="level-item">
                             <input type="range" min="1" max="100" value="50" class="slider" id="slider1">
                         </div>
+                        <div class = "level-item"><div class = "label">Economy</div></div>
                         <div class="level-item">
                             <input type="text" id="slider1Text" value="">
                         </div>
                     </div>
                 </div>
             </div>
+            <br/>
+            <div class = "label" style="font-size: large">Electric Vehicles penetration</div>
             <div>
-                <label class="label">2-Wheeler</label>
+                <label class="label" style = "width: 100%;">2-Wheeler</label>
 
                 <div class="slidecontainer">
                     <div class="level">
+                        <div class = "level-item"><div class = "label">0</div></div>
                         <div class="level-item">
                             <input type="range" min="1" max="100" value="50" class="slider" id="slider2">
                         </div>
+                        <div class = "level-item"><div class = "label">100</div></div>
                         <div class="level-item">
                             <input type="text" id="slider2Text" value="">
                         </div>
@@ -52,13 +58,15 @@
                 </div>
             </div>
             <div>
-                <label class="label">Compact</label>
+                <label class="label" style = "width: 100%;">Compact vehicles</label>
 
                 <div class="slidecontainer">
                     <div class="level">
+                        <div class = "level-item"><div class = "label">0</div></div>
                         <div class="level-item">
                             <input type="range" min="1" max="100" value="50" class="slider" id="slider3">
                         </div>
+                        <div class = "level-item"><div class = "label">100</div></div>
                         <div class="level-item">
                             <input type="text" id="slider3Text" value="">
                         </div>
@@ -66,13 +74,15 @@
                 </div>
             </div>
             <div>
-                <label class="label">SUVs</label>
+                <label class="label" style = "width: 100%;">Large vehicles</label>
 
                 <div class="slidecontainer">
                     <div class="level">
+                        <div class = "level-item"><div class = "label">0</div></div>
                         <div class="level-item">
                             <input type="range" min="1" max="100" value="50" class="slider" id="slider4">
                         </div>
+                        <div class = "level-item"><div class = "label">100</div></div>
                         <div class="level-item">
                             <input type="text" id="slider4Text" value="">
                         </div>
@@ -80,27 +90,31 @@
                 </div>
             </div>
             <div>
-                <label class="label">Compact vehicles</label>
+                <label class="label" style = "width: 100%;">SUVs</label>
 
                 <div class="slidecontainer">
                     <div class="level">
+                        <div class = "level-item"><div class = "label">0</div></div>
                         <div class="level-item">
                             <input type="range" min="1" max="100" value="50" class="slider" id="slider5">
                         </div>
+                        <div class = "level-item"><div class = "label">100</div></div>
                         <div class="level-item">
                             <input type="text" id="slider5Text" value="">
                         </div>
                     </div>
                 </div>
             </div>
+            <br/>
+            <div class = "label" style="font-size: large">Percentage of individuals working from home</div>
             <div>
-                <label class="label">Work from home</label>
-
                 <div class="slidecontainer">
                     <div class="level">
+                        <div class = "level-item"><div class = "label">0</div></div>
                         <div class="level-item">
                             <input type="range" min="1" max="100" value="50" class="slider" id="slider6">
                         </div>
+                        <div class = "level-item"><div class = "label">100</div></div>
                         <div class="level-item">
                             <input type="text" id="slider6Text" value="">
                         </div>
@@ -411,6 +425,10 @@
         var dates = Object.values(dfs[zone]["DT"]);
         var vals = Object.values(dfs[zone]["EnDemProfile"]);
 
+        dates = dates.map(function(x){
+            return x.slice(10);
+        })
+
         var chart = document.getElementById('chart').getContext('2d');
 
         if (lineChart != null)
@@ -441,7 +459,7 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            labelString: "KWatts",
+                            labelString: "Kilowatt",
                             fontSize: 18
                         },
                     }],
