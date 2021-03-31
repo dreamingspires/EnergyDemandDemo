@@ -128,6 +128,7 @@
                      style="background-color: dodgerblue ">RUN THE SIMULATION
                 </div>
             </div>
+            <div class = "container">
             <div class="level">
                 <div class="level-left">
                     <div class="level-item">
@@ -138,34 +139,34 @@
                                     fed
                                 </div>
                             </div>
-                            <div class="control">
+
                                 <div class="button is-fullwidth" id="pop" style="background-color: #B22222">(2)
                                     Population synthesis
                                 </div>
-                            </div>
-                            <div class="control">
+
+
                                 <div class="button is-fullwidth" id="time" style="background-color: #B22222">(3) Time
                                     use
                                     synthesis
                                 </div>
-                            </div>
-                            <div class="control">
+
+
                                 <div class="button is-fullwidth" id="energy" style="background-color: #B22222">(4)
                                     Energy
                                     demand
                                 </div>
-                            </div>
-                            <div class="control">
+
+
                                 <div class="button is-fullwidth" id="report" style="background-color: #b22222">(5)
                                     Reporting
                                 </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="field">
-                        <div class="box">
+
+
                             <div class="button is-fullwidth" id ="setLay" style="background-color: #B22222">SETUP LAYER</div>
 
                             <div class="level mb-0">
@@ -198,10 +199,10 @@
                                     <div class="button" id = "energy2" style="background-color: #B22222">Energy demand</div>
                                 </div>
                             </div>
-                        </div>
 
 
-                    </div>
+
+                </div>
                 </div>
             </div>
 
@@ -237,28 +238,28 @@
 
                 <div class = "container" style="position: relative;  text-align: center;">
                 <img src="map.png" style="z-index: 1;max-width:100%; max-height:100%;object-fit: fill"/>
-                <div class="button is-large" id="mapA"
-                     style="border-radius: 50%; z-index: 2; position: absolute; left: 22%; top: 33%; background-color: rgba(248,203,173,0.0); border:hidden">
+                <div class="button is-medium" id="mapA"
+                     style="border-radius: 50%; z-index: 2; position: absolute; left: 25%; top: 33%; background-color: rgba(248,203,173,0.0); border:hidden;">
                     Zone A
                 </div>
-                <div class="button is-large" id="mapB"
-                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 44%; top: 11%; background-color: rgba(143,170,220,0.0); border:hidden">
+                <div class="button is-medium" id="mapB"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 44%; top: 5%; background-color: rgba(143,170,220,0.0); border:hidden">
                     Zone B
                 </div>
-                <div class="button is-large" id="mapC"
-                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 55%; top: 22%; background-color: rgba(197,224,180,0.0); border:hidden">
+                <div class="button is-medium" id="mapC"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 63%; top: 22%; background-color: rgba(197,224,180,0.0); border:hidden">
                     Zone C
                 </div>
-                <div class="button is-large" id="mapD"
-                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 22%; top: 55%; background-color: rgba(0,176,240,0.0); border:hidden">
+                <div class="button is-medium" id="mapD"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 25%; top: 55%; background-color: rgba(0,176,240,0.0); border:hidden">
                     Zone D
                 </div>
-                <div class="button is-large" id="mapE"
+                <div class="button is-medium" id="mapE"
                      style="border-radius: 50%;  z-index: 2; position: absolute; left: 52%; top: 55%; background-color: rgba(255,242,204,0.0); border:hidden">
                     Zone E
                 </div>
-                <div class="button is-large" id="mapF"
-                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 65%; top: 44%; background-color: rgba(217,217,217,0.0); border:hidden">
+                <div class="button is-medium" id="mapF"
+                     style="border-radius: 50%;  z-index: 2; position: absolute; left: 75%; top: 44%; background-color: rgba(217,217,217,0.0); border:hidden">
                     Zone F
                 </div>
 
@@ -372,12 +373,12 @@
     var dfs = {{ dfs |safe }};
 
     var zone_desc = {
-        "A": [92, 15, 6, 3, 2, 21, 3743, 1251, 29, 24, 16, 18, 6, 7, 17, 83],
-        "B": [86, 12, 4, 11, 6, 10, 9521, 3233, 30, 26, 14, 18, 6, 5, 19, 81],
-        "C": [73, 5, 10, 17, 14, 70, 2009, 667, 28, 24, 11, 14, 11, 12, 15, 85],
-        "D": [77, 2, 1, 1, 0, 10, 6408, 2134, 24, 35, 13, 19, 6, 3, 18, 82],
-        "E": [89, 18, 6, 2, 5, 50, 2592, 898, 41, 23, 19, 12, 4, 1, 13, 81],
-        "F": [55, 15, 10, 16, 15, 40, 6720, 2215, 22, 37, 21, 9, 3, 8, 22, 78]
+        "A": [8, 15, 6, 3, 2, 21, 3743, 1251, 29, 24, 16, 18, 6, 7, 17, 83],
+        "B": [14, 12, 4, 11, 6, 10, 9521, 3233, 30, 26, 14, 18, 6, 5, 19, 81],
+        "C": [27, 5, 10, 17, 14, 70, 2009, 667, 28, 24, 11, 14, 11, 12, 15, 85],
+        "D": [23, 2, 1, 1, 0, 10, 6408, 2134, 24, 35, 13, 19, 6, 3, 18, 82],
+        "E": [11, 18, 6, 2, 5, 50, 2592, 898, 41, 23, 19, 12, 4, 1, 13, 81],
+        "F": [45, 15, 10, 16, 15, 40, 6720, 2215, 22, 37, 21, 9, 3, 8, 22, 78]
     }
     var lineChart = null;
 
